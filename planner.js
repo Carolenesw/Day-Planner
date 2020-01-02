@@ -1,14 +1,11 @@
 $(document).ready(function() {
-
+//add current date to page
   var dateToDay = $("#date");
 
-  
-  var toDate = Date(Date.now());
-  a = toDate.toString()
-  document.write(a);
-
-  console.log(toDate);
-
-  $("#date").append(a);
+  var toDate = new Date();
+  toDate.setDate(toDate.getDate()+"");
+ console.log(toDate);
+$("#date").append(toDate);
+ 
 
  });

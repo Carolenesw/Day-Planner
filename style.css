@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+  border: 3px;
+  background-color: bisque;
+}
+
+h2{
+  text-align: center;
+  background-color: cornsilk;
+}
+
+.time {
+  width: 100%;
+  border: 1px solid #dddddd;
+  padding: 14px;
+  margin-right: 100px;
+}
+ .text {
+  width: 100%;
+  border: 1px solid #dddddd;
+  margin-right: 30px;
+  padding-right: 20px;
+ }
+
+ .save {
+  width: 100%;
+  border: 1px solid #dddddd;
+  padding: 14px;
+  margin-right: 100px;
+
+ }

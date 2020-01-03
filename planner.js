@@ -1,28 +1,27 @@
-$(document).ready(function() {
-//add current date to page
+$(document).ready(function () {
+  //add current date to page
   var dateToDay = $("#date");
 
   var toDate = new Date();
-  toDate.setDate(toDate.getDate()+"");
- console.log(toDate);
-$("#date").append(toDate);
+  toDate.setDate(toDate.getDate() + "");
+  console.log(toDate);
+  $("#date").append(toDate);
+
+  //create block to hold user input 
+
+  var textArea = $("#text");
+  var submit = $("#save");
  
-//create block to hold user input 
+//create click event to show user information when submitted
+  $("#save").on("click", function (event) {
 
-var textArea = $("#text");
-var submit = $("#save")
- 
-userInputLog();
+    event.preventDefault();
 
-function displayInfo(type, message) {
-  textArea.textContent = message;
-textArea.setAttribute("class", type); 
-}
+    var textArea = $("#text").val();
 
-("#save").on("click", function(){
-  $("#text").append(submit)
+    console.log(event);
+  });
+
+
+
 });
-
-
-
- });

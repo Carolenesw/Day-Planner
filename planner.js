@@ -1,10 +1,15 @@
 $(document).ready(function () {
   //add current date to page using moment.js
-var t = moment().format('LLLL');
+var d = moment().format('LLLL');
+console.log(d);
+
+$("#date").append(d);
+
+
+var t = moment().format('LT'); 
 console.log(t);
 
-$("#date").append(t);
-
+$(".time").append(t);
 
   //create block to hold user input 
 

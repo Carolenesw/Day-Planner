@@ -5,22 +5,6 @@ $(document).ready(function () {
 
   $("#date").append(d);
 
-  //add current time slots using moment.js
-  // var t = moment().format('LT'); 
-  // console.log(t); ---- use for current time slot comparison 
-
-  // $(".time").append(t);
-
-
-  // var hourlyTimeSlot = ["00", "15", "30", "45"];
-  // var time = []; 
-  // for (var i = 0; i < 24; i++) {
-  // for(var j = 0; j < 4; j++) {
-  //   time.push(i = ":" + hourlyTimeSlot[j]);
-
-  //   console.log("time");
-  // }
-  // }
 
   //create block to hold user input 
 
@@ -59,16 +43,27 @@ $(document).ready(function () {
     // console.log(event);
   });
 
-  // creat time block color-code  --- giving problem 
+ 
+  // add current time slots using moment.js
+  var t = moment().format('LT'); 
+  var timeNow = t.toString();
+  console.log(timeNow); 
 
-  function timeSlot() {
+var timeNow = $(".time")
+  //  use for current time slot comparison 
 
-// if (t)
+ 
 
-    $("#text1").css("background-color", "red");
+   // creat time block color-code  --- giving problem 
+  // function timeSlot() {
 
-  }
-  timeSlot();
+    if (t == timeNow)
+   $("#text1").css("background-color", "red");
+
+    // $("#text1").css("background-color", "red");
+console.log();
+  // }
+  // timeSlot();
 
 
 

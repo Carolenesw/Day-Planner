@@ -1,12 +1,10 @@
 $(document).ready(function () {
-  //add current date to page
-  
-  // var dateToDay = $("#date");
+  //add current date to page using moment.js
+var t = moment().format('LLLL');
+console.log(t);
 
-  // var toDate = new Date();
-  // toDate.setDate(toDate.getDate() + "");
-  // console.log(toDate);
-  $("#date").append(toDate);
+$("#date").append(t);
+
 
   //create block to hold user input 
 

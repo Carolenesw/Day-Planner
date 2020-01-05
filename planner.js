@@ -1,6 +1,12 @@
 $(document).ready(function () {
   //add current date to page using moment.js
   var d = moment().format('LLLL');
+  // add current time slots with current time
+  var dateL = new Date();
+  // create array to store time for color-code block 
+var timeCompare = $(".text");
+timeCompare = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"];
+
   console.log(d);
 
   $("#date").append(d);
@@ -9,7 +15,7 @@ $(document).ready(function () {
   //create block to hold user input 
 
   var submit = $(".save");
-
+//get value from user input to local storage 
   $("#text9").val(localStorage.getItem("text9"));
   $("#text10").val(localStorage.getItem("text10"));
   $("#text11").val(localStorage.getItem("text11"));
@@ -33,19 +39,16 @@ $(document).ready(function () {
 
 
     localStorage.setItem(textId, text);
-
-    // console.log(event);
+console.log(compareArr(timeCompare));
   });
 
+  
 
 
-  // add current time slots with current time
-  var dateL = new Date();
+  
 
-
-  console.log(standardTime(dateL.getHours()));
-
-
+  
+//calcuate hours in time format
   function standardTime(hour) {
 
     var amPm;
@@ -63,28 +66,32 @@ $(document).ready(function () {
   }
  
 
-// create array to store time for color-code block 
-var numTwo = $(".text");
- numTwo = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"];
 
+ function compareArr(arr) {
+  // var currentTime = standardTime(dateL.getHours());
+  var currentTime = standardTime(11);
+  var indexI = 0;
+  for(var i = 0; i <arr.length; i++) {
+    if (currentTime == arr[i]) {
+indexI = i;
 
- function numberArr(arr) {
-
-  for(var i = 0; i <numTwo.length; i++) {
-    console.log("arr[i]");
-  }
-console.log("....")
+}
+return indexI;
+// console.log("....")
  }
- 
- console.log(numTwo);
-
-
-
-
+ }
   // creat time block for color-code  
 // function colorCodeBlock() {
 
-// console.log(colorCodeBlock());
+
+
+
+  // if ( numTwo < standardTime)
+  // // console.log("red");
+  //  $("#text9").css("background-color", "grey");
+  //   $("#text9").css("background-color", "red");
+  //   $("#text9").css("background-color", "green");
+// }
 
 
 // function consoleInside(arr) {
@@ -92,19 +99,8 @@ console.log("....")
 //   // We then loop through the selected array.
 //   for (var i = 0; i < arr.length; i++) {
 
-//     // Each time we print the value inside the array.
-//     console.log(arr[i]);
-//   }
-//   console.log("---------");
-// }
   
-  // console.log(numTwo);
-
-
-
-
-  
-  //   $("#text1").css("background-color", "red");
+  //  $("#text1").css("background-color", "red");
 
   // // $("#text1").css("background-color", "red");
   // console.log();

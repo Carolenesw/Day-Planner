@@ -8,7 +8,6 @@ $(document).ready(function () {
 
   //create block to hold user input 
 
-
   var submit = $(".save");
 
   $("#text9").val(localStorage.getItem("text9"));
@@ -27,11 +26,6 @@ $(document).ready(function () {
     var textId = $(this).attr("data-text");
     console.log("textId");
     var textArea = $("#" + textId);
-    // event.preventDefault();
-
-    // textArea.textContext = text;
-
-    // var text = $("#text").val();
 
 
     var text = textArea.val();
@@ -45,10 +39,9 @@ $(document).ready(function () {
 
 
 
-
-// add current time slots with current time
+  // add current time slots with current time
   var dateL = new Date();
-  
+
 
   console.log(standardTime(dateL.getHours()));
 
@@ -66,23 +59,55 @@ $(document).ready(function () {
       newHour = hour;
       amPm = "am";
     }
-  // 6:00pm 
-  // 9:00am
-return newHour + ":00 " + amPm;
-
-
+    return newHour + ":00" + amPm;
   }
+ 
+
+// create array to store time for color-code block 
+var numTwo = $(".text");
+ numTwo = ["9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm"];
+
+
+ function numberArr(arr) {
+
+  for(var i = 0; i <numTwo.length; i++) {
+    console.log("arr[i]");
+  }
+console.log("....")
+ }
+ 
+ console.log(numTwo);
 
 
 
-  // creat time block color-code  --- giving problem 
-  // function timeSlot() {
 
-    if (t == timeNow)
-    $("#text1").css("background-color", "red");
+  // creat time block for color-code  
+// function colorCodeBlock() {
 
-  // $("#text1").css("background-color", "red");
-  console.log();
-  // }
-  // timeSlot();
+// console.log(colorCodeBlock());
+
+
+// function consoleInside(arr) {
+
+//   // We then loop through the selected array.
+//   for (var i = 0; i < arr.length; i++) {
+
+//     // Each time we print the value inside the array.
+//     console.log(arr[i]);
+//   }
+//   console.log("---------");
+// }
+  
+  // console.log(numTwo);
+
+
+
+
+  
+  //   $("#text1").css("background-color", "red");
+
+  // // $("#text1").css("background-color", "red");
+  // console.log();
+  // // }
+  // // timeSlot();
 })

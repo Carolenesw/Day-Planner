@@ -20,9 +20,9 @@ $(document).ready(function () {
   $("#text3").val(localStorage.getItem("text3"));
   $("#text4").val(localStorage.getItem("text4"));
   $("#text5").val(localStorage.getItem("text5"));
-  
+
   // create click event to show user information when submitted
-  // does not work ???
+
   $(".save").on("click", function (event) {
     var textId = $(this).attr("data-text");
     console.log("textId");
@@ -37,35 +37,52 @@ $(document).ready(function () {
     var text = textArea.val();
     console.log(text);
 
-    
+
     localStorage.setItem(textId, text);
 
     // console.log(event);
   });
 
- 
-  // add current time slots using moment.js
-  var t = moment().format('LT'); 
-  var timeNow = t.toString();
-  console.log(timeNow); 
 
-var timeNow = $(".time")
-  //  use for current time slot comparison 
 
- 
 
-   // creat time block color-code  --- giving problem 
+// add current time slots with current time
+  var dateL = new Date();
+  
+
+  console.log(standardTime(dateL.getHours()));
+
+
+  function standardTime(hour) {
+
+    var amPm;
+    var newHour;
+    if (hour > 12) {
+      newHour = hour - 12;
+      amPm = "pm";
+    }
+
+    else {
+      newHour = hour;
+      amPm = "am";
+    }
+  // 6:00pm 
+  // 9:00am
+return newHour + ":00 " + amPm;
+
+
+  }
+
+
+
+  // creat time block color-code  --- giving problem 
   // function timeSlot() {
 
     if (t == timeNow)
-   $("#text1").css("background-color", "red");
+    $("#text1").css("background-color", "red");
 
-    // $("#text1").css("background-color", "red");
-console.log();
+  // $("#text1").css("background-color", "red");
+  console.log();
   // }
   // timeSlot();
-
-
-
-
-});
+})
